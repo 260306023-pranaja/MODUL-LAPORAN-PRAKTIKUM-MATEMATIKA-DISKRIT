@@ -1,0 +1,26 @@
+lulus_wawancara = True
+nilai_tes_memenuhi = True
+sudah_semester_6 = True
+punya_sertifikat_bahasa = False
+punya_pengalaman_organisasi = True
+
+# Model logika
+diterima_magang = lulus_wawancara and nilai_tes_memenuhi and sudah_semester_6
+nilai_tambah = punya_sertifikat_bahasa or punya_pengalaman_organisasi
+masuk_kategori_unik = punya_sertifikat_bahasa != punya_pengalaman_organisasi
+
+# Output hasil
+if diterima_magang:
+    print("Peserta DITERIMA magang")
+else:
+    print("Peserta TIDAK DITERIMA magang")
+
+if nilai_tambah:
+    print("Peserta memiliki NILAI TAMBAH")
+else:
+    print("Peserta tidak memiliki nilai tambah")
+
+if masuk_kategori_unik:
+    print("Peserta masuk KATEGORI UNIK (hanya satu kelebihan yang dimiliki)")
+else:
+    print("Peserta tidak masuk kategori unik")

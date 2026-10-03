@@ -1,0 +1,26 @@
+anggota_aktif = True
+tidak_ada_denda = True
+buku_tersedia = False
+punya_kartu_mahasiswa = True
+punya_surat_izin = False
+
+# Model logika
+boleh_pinjam = anggota_aktif and tidak_ada_denda and buku_tersedia
+identitas_valid = punya_kartu_mahasiswa or punya_surat_izin
+perlu_cek_ulang = punya_kartu_mahasiswa != punya_surat_izin
+
+# Output hasil
+if boleh_pinjam:
+    print("Mahasiswa BOLEH meminjam buku")
+else:
+    print("Mahasiswa TIDAK BOLEH meminjam buku")
+
+if identitas_valid:
+    print("Identitas VALID")
+else:
+    print("Identitas TIDAK VALID")
+
+if perlu_cek_ulang:
+    print("Perlu CEK ULANG (hanya satu dokumen identitas yang dibawa)")
+else:
+    print("Tidak perlu cek ulang")

@@ -1,0 +1,26 @@
+mahasiswa_aktif = True
+ipk_memenuhi = False
+belum_terima_bantuan_lain = True
+punya_ktp = True
+punya_kk = False
+
+# Model logika
+dapat_bantuan = mahasiswa_aktif and ipk_memenuhi and belum_terima_bantuan_lain
+berkas_lengkap = punya_ktp or punya_kk
+perlu_verifikasi_lanjut = punya_ktp != punya_kk
+
+# Output hasil seleksi
+if dapat_bantuan:
+    print("Mahasiswa DAPAT bantuan dana kemahasiswaan")
+else:
+    print("Mahasiswa TIDAK DAPAT bantuan dana kemahasiswaan")
+
+if berkas_lengkap:
+    print("Berkas syarat LENGKAP")
+else:
+    print("Berkas syarat TIDAK LENGKAP")
+
+if perlu_verifikasi_lanjut:
+    print("Perlu VERIFIKASI LANJUT (hanya satu dokumen identitas yang ada)")
+else:
+    print("Tidak perlu verifikasi lanjut")

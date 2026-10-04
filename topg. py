@@ -1,0 +1,26 @@
+punya_kartu_mahasiswa = True
+jadwal_sesuai = True
+kuota_tersedia = True
+bawa_tas_besar = True
+bawa_sepeda_lipat = False
+
+# Model logika
+boleh_naik = punya_kartu_mahasiswa and jadwal_sesuai and kuota_tersedia
+bawa_barang_tambahan = bawa_tas_besar or bawa_sepeda_lipat
+perlu_tempat_khusus = bawa_tas_besar != bawa_sepeda_lipat
+
+# Output hasil
+if boleh_naik:
+    print("Penumpang BOLEH naik bus")
+else:
+    print("Penumpang TIDAK BOLEH naik bus")
+
+if bawa_barang_tambahan:
+    print("Penumpang membawa BARANG TAMBAHAN")
+else:
+    print("Penumpang tidak membawa barang tambahan")
+
+if perlu_tempat_khusus:
+    print("Perlu TEMPAT KHUSUS (hanya satu jenis barang besar yang dibawa)")
+else:
+    print("Tidak perlu tempat khusus")

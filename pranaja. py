@@ -1,0 +1,26 @@
+terdaftar_resmi = True
+lolos_tes_fisik = True
+bebas_cedera = False
+punya_sepatu_olahraga = True
+punya_seragam_tim = False
+
+# Model logika
+boleh_tanding = terdaftar_resmi and lolos_tes_fisik and bebas_cedera
+perlengkapan_ada = punya_sepatu_olahraga or punya_seragam_tim
+perlu_lengkapi_salah_satu = punya_sepatu_olahraga != punya_seragam_tim
+
+# Output hasil
+if boleh_tanding:
+    print("Peserta BOLEH bertanding")
+else:
+    print("Peserta TIDAK BOLEH bertanding")
+
+if perlengkapan_ada:
+    print("Perlengkapan TERSEDIA")
+else:
+    print("Perlengkapan TIDAK TERSEDIA")
+
+if perlu_lengkapi_salah_satu:
+    print("Peserta perlu MELENGKAPI salah satu perlengkapan yang kurang")
+else:
+    print("Perlengkapan sudah lengkap semua / tidak ada sama sekali")

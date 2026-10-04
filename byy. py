@@ -1,0 +1,26 @@
+izin_resmi_disetujui = True
+ada_bukti_sakit = False
+lapor_sebelum_batas_waktu = True
+bawa_surat_dokter = False
+bawa_surat_orang_tua = True
+
+# Model logika
+boleh_ujian_susulan = izin_resmi_disetujui and ada_bukti_sakit and lapor_sebelum_batas_waktu
+bukti_pendukung_ada = bawa_surat_dokter or bawa_surat_orang_tua
+hanya_satu_bukti = bawa_surat_dokter != bawa_surat_orang_tua
+
+# Output hasil
+if boleh_ujian_susulan:
+    print("Mahasiswa BOLEH ikut ujian susulan")
+else:
+    print("Mahasiswa TIDAK BOLEH ikut ujian susulan")
+
+if bukti_pendukung_ada:
+    print("Bukti pendukung TERSEDIA")
+else:
+    print("Bukti pendukung TIDAK TERSEDIA")
+
+if hanya_satu_bukti:
+    print("Hanya SATU jenis bukti yang dibawa, perlu dicek ulang kelengkapannya")
+else:
+    print("Kedua bukti sama-sama ada / sama-sama tidak ada")

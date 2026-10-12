@@ -1,26 +1,11 @@
-terdaftar_resmi = True
-lolos_tes_fisik = True
-bebas_cedera = False
-punya_sepatu_olahraga = True
-punya_seragam_tim = False
+punya_tiket_reguler = True
+punya_tiket_promo = False
 
-# Model logika
-boleh_tanding = terdaftar_resmi and lolos_tes_fisik and bebas_cedera
-perlengkapan_ada = punya_sepatu_olahraga or punya_seragam_tim
-perlu_lengkapi_salah_satu = punya_sepatu_olahraga != punya_seragam_tim
+# Model logika (XOR: pakai != karena Python tidak punya kata kunci 'xor')
+boleh_naik = punya_tiket_reguler != punya_tiket_promo
 
 # Output hasil
-if boleh_tanding:
-    print("Peserta BOLEH bertanding")
+if boleh_naik:
+    print("Penumpang BOLEH naik (tiket valid, hanya satu jenis)")
 else:
-    print("Peserta TIDAK BOLEH bertanding")
-
-if perlengkapan_ada:
-    print("Perlengkapan TERSEDIA")
-else:
-    print("Perlengkapan TIDAK TERSEDIA")
-
-if perlu_lengkapi_salah_satu:
-    print("Peserta perlu MELENGKAPI salah satu perlengkapan yang kurang")
-else:
-    print("Perlengkapan sudah lengkap semua / tidak ada sama sekali")
+    print("Penumpang TIDAK BOLEH naik (tiket ganda / tidak punya tiket sama sekali)")

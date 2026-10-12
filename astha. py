@@ -1,26 +1,10 @@
-dosen_atau_staff = False
-punya_kendaraan_roda_dua = True
-jam_kerja_pagi = True
-punya_disabilitas = False
-sering_bawa_barang_berat = True
+punya_kartu_pelajar = True
+punya_member_bioskop = False
+sedang_promo_ulang_tahun = False
 
-# Model logika
-dapat_parkir_khusus = dosen_atau_staff and punya_kendaraan_roda_dua and jam_kerja_pagi
-butuh_perhatian_khusus = punya_disabilitas or sering_bawa_barang_berat
-hanya_satu_alasan = punya_disabilitas != sering_bawa_barang_berat
+dapat_diskon = punya_kartu_pelajar or punya_member_bioskop or sedang_promo_ulang_tahun
 
-# Output hasil
-if dapat_parkir_khusus:
-    print("DAPAT tempat parkir khusus")
+if dapat_diskon:
+    print("Penonton DAPAT diskon tiket")
 else:
-    print("TIDAK DAPAT tempat parkir khusus")
-
-if butuh_perhatian_khusus:
-    print("Perlu PERHATIAN KHUSUS saat parkir")
-else:
-    print("Tidak perlu perhatian khusus")
-
-if hanya_satu_alasan:
-    print("Hanya SATU alasan yang berlaku, cukup dicatat sebagai kasus ringan")
-else:
-    print("Kedua alasan sama-sama berlaku / sama-sama tidak berlaku")
+    print("Penonton TIDAK DAPAT diskon tiket")
